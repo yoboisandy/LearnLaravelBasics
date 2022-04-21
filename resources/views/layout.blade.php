@@ -12,6 +12,7 @@
             <li><a href="/home">Home</a></li>
             <li><a href="/about/sandeep">About</a></li>
             <li><a href="/directives">Directives</a></li>
+            <li><a href="/register">Register</a></li>
         </ul>
     </nav>
     <div style="margin: 40px">

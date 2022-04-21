@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +29,5 @@ Route::get('/directives', function () {
 
 Route::get('/', [DemoController::class, 'index']);
 Route::get('/', '\App\Http\Controllers\DemoController@about');
+Route::get('/register', [RegistrationController::class, 'registrationForm']);
+Route::post('/register', [RegistrationController::class, 'submitForm']);
