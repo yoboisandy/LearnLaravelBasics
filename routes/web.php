@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DemoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
 Route::get('/about/{name}', function ($name) {
     return view('about', compact('name'));
@@ -24,3 +25,6 @@ Route::get('/about/{name}', function ($name) {
 Route::get('/directives', function () {
     return view('directives');
 });
+
+Route::get('/', [DemoController::class, 'index']);
+Route::get('/', '\App\Http\Controllers\DemoController@about');
