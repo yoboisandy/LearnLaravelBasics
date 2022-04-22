@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegistrationController;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
@@ -38,3 +39,6 @@ Route::get('/customers', function () {
     echo "<pre>";
     print_r($customers->toArray());
 });
+
+Route::get('/products', [ProductController::class, 'create']);
+Route::post('/saveproduct', [ProductController::class, 'store']);

@@ -13,6 +13,7 @@
             <li><a href="/about/sandeep">About</a></li>
             <li><a href="/directives">Directives</a></li>
             <li><a href="/register">Register</a></li>
+            <li><a href="/products">products</a></li>
         </ul>
     </nav>
     <div style="margin: 40px">
