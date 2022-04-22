@@ -19,15 +19,15 @@ use Illuminate\Support\Facades\Route;
 //     return view('home');
 // });
 
-Route::get('/about/{name}', function ($name) {
-    return view('about', compact('name'));
-});
+// Route::get('/about/{name}', function ($name) {
+//     return view('about', compact('name'));
+// });
 
 Route::get('/directives', function () {
     return view('directives');
 });
 
 Route::get('/', [DemoController::class, 'index']);
-Route::get('/', '\App\Http\Controllers\DemoController@about');
+Route::get('/about/{name}', '\App\Http\Controllers\DemoController@about');
 Route::get('/register', [RegistrationController::class, 'registrationForm']);
 Route::post('/register', [RegistrationController::class, 'submitForm']);
