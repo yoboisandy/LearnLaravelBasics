@@ -19,7 +19,7 @@
                 <a href={{route('products.destroy', $p->id)}}>
                     <button>Delete</button>
                 </a>
-                <a href={{}}>
+                <a href={{route('products.edit', $p->id)}}>
                     <button>Edit</button>
                 </a>
             </td>

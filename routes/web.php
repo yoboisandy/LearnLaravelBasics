@@ -45,4 +45,7 @@ Route::controller(ProductController::class)->name('products.')->prefix('products
     Route::post('/',  'store')->name('store');
     Route::get('/', 'view')->name('view');
     Route::get('/delete/{id}', 'destroy')->name('destroy');
+    Route::get('/delete/{id}', 'destroy')->name('destroy');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::post('/update/{id}', 'update')->name('update');
 });
