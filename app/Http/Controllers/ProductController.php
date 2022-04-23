@@ -28,4 +28,10 @@ class ProductController extends Controller
         $products = Product::all();
         return view('products.view', compact('products'));
     }
+    public function destroy($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->delete();
+        return redirect()->route('products.view');
+    }
 }

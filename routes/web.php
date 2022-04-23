@@ -40,8 +40,9 @@ Route::get('/customers', function () {
     print_r($customers->toArray());
 });
 
-Route::controller(ProductController::class)->name('products.')->group(function () {
-    Route::get('/products/create',  'create')->name('create');
-    Route::post('/products',  'store')->name('store');
-    Route::get('/products', 'view')->name('view');
+Route::controller(ProductController::class)->name('products.')->prefix('products')->group(function () {
+    Route::get('/create',  'create')->name('create');
+    Route::post('/',  'store')->name('store');
+    Route::get('/', 'view')->name('view');
+    Route::get('/delete/{id}', 'destroy')->name('destroy');
 });
