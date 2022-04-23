@@ -1,5 +1,5 @@
 @if($type == "textarea")
-  <textarea name="{{$name}}" id="{{$name}}" cols="30" rows="10" placeholder="{{$placeholder}}">
+  <textarea name="{{$name}}" id="{{$name}}"  >
     {{old($name)}}
   </textarea>
   <br>

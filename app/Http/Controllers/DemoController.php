@@ -10,8 +10,8 @@ class DemoController extends Controller
     {
         return view('home');
     }
-    public function about()
+    public function about($name)
     {
-        return view('about');
+        return view('about', compact('name'));
     }
 }

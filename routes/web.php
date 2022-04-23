@@ -40,5 +40,6 @@ Route::get('/customers', function () {
     print_r($customers->toArray());
 });
 
-Route::get('/products', [ProductController::class, 'create']);
-Route::post('/saveproduct', [ProductController::class, 'store']);
+Route::get('/products/create', [ProductController::class, 'create']);
+Route::post('/products', [ProductController::class, 'store']);
+Route::get('/products', [ProductController::class, 'view']);

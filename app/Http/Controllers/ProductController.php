@@ -19,5 +19,13 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->description = $request->description;
         $product->save();
+
+        return "Product created successfully";
+    }
+
+    public function view()
+    {
+        $products = Product::all();
+        return view('products.view', compact('products'));
     }
 }
