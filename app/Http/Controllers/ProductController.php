@@ -20,7 +20,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->save();
 
-        return redirect('/products');
+        return redirect()->route('products.view');
     }
 
     public function view()

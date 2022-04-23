@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 <div>
-    <a href="/products/create">Add product</a>
+    <a href="{{route('products.create') }}">Add product</a>
 </div>
     <table>
         <tr>

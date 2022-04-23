@@ -40,6 +40,8 @@ Route::get('/customers', function () {
     print_r($customers->toArray());
 });
 
-Route::get('/products/create', [ProductController::class, 'create']);
-Route::post('/products', [ProductController::class, 'store']);
-Route::get('/products', [ProductController::class, 'view']);
+Route::controller(ProductController::class)->name('products.')->group(function () {
+    Route::get('/products/create',  'create')->name('create');
+    Route::post('/products',  'store')->name('store');
+    Route::get('/products', 'view')->name('view');
+});

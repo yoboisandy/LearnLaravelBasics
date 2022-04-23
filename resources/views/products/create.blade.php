@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form action="/products" method="post">
+    <form action="{{ route('products.store') }}" method="post">
         @csrf
         <x-input type="text" name="name" placeholder="Enter Name of Product" />
         
