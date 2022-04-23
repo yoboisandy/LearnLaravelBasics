@@ -20,7 +20,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->save();
 
-        return "Product created successfully";
+        return redirect('/products');
     }
 
     public function view()
