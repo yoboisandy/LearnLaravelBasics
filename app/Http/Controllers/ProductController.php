@@ -17,6 +17,8 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        p($request->all());
+        die;
         $product = new Product();
         $product->name = $request->name;
         $product->price = $request->price;
