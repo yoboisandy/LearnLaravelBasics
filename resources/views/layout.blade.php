@@ -16,11 +16,11 @@
             <li><a href="{{route('products.view')}}">products</a></li>
         </ul>
     </nav>
-    @if (session()->has('user-name'))
+    {{-- @if (session()->has('user-name'))
     {{session()->get('user-name')}}
     @else
      Guest
-    @endif
+    @endif --}}
     <div style="margin: 40px">
         @yield('content')
     </div>

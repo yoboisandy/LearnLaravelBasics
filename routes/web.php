@@ -49,6 +49,9 @@ Route::controller(ProductController::class)->name('products.')->prefix('products
     Route::get('/delete/{id}', 'destroy')->name('destroy');
     Route::get('/edit/{id}', 'edit')->name('edit');
     Route::post('/update/{id}', 'update')->name('update');
+    Route::get('/trash', 'viewTrash')->name('trash');
+    Route::get('/forcedelete/{id}', 'forceDelete')->name('forcedelete');
+    Route::get('/restore/{id}', 'restore')->name('restore');
 });
 
 Route::get('get-all-session', function () {

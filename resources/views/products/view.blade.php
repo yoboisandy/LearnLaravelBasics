@@ -2,6 +2,7 @@
 @section('content')
 <div>
     <a href="{{route('products.create') }}">Add product</a>
+    <a href="{{route('products.trash') }}">Trash</a>
 </div>
     <table border="2">
         <tr>
@@ -17,7 +18,7 @@
             <td>{{$p->price}}</td>
             <td>
                 <a href={{route('products.destroy', $p->id)}}>
-                    <button>Delete</button>
+                    <button>Trash</button>
                 </a>
                 <a href={{route('products.edit', $p->id)}}>
                     <button>Edit</button>

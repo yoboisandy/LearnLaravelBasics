@@ -34,10 +34,30 @@ class ProductController extends Controller
         return view('products.view', compact('products'));
     }
 
+    public function viewTrash()
+    {
+        $products = Product::onlyTrashed()->get();
+        return view('products.view-trash', compact('products'));
+    }
+
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
         $product->delete();
+        return redirect()->route('products.view');
+    }
+
+    public function forceDelete($id)
+    {
+        $product = Product::withTrashed()->findOrFail($id);
+        $product->forceDelete();
+        return redirect()->route('products.trash');
+    }
+
+    public function restore($id)
+    {
+        $product = Product::withTrashed()->findOrFail($id);
+        $product->restore();
         return redirect()->route('products.view');
     }
 
