@@ -4,6 +4,7 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegistrationController;
 use App\Models\Customer;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,4 +49,20 @@ Route::controller(ProductController::class)->name('products.')->prefix('products
     Route::get('/delete/{id}', 'destroy')->name('destroy');
     Route::get('/edit/{id}', 'edit')->name('edit');
     Route::post('/update/{id}', 'update')->name('update');
+});
+
+Route::get('get-all-session', function () {
+    $session = session()->all();
+    p($session);
+});
+Route::get('set-session', function (Request $request) {
+    $request->session()->put('user-name', "sandeep");
+    $request->session()->put('user-id', "123");
+    $request->session()->flash('message', 'successfull');
+    return redirect('/get-all-session');
+});
+Route::get('destroy-session', function () {
+    session()->forget('user-name');
+    session()->forget('user-id');
+    return redirect('/get-all-session');
 });
