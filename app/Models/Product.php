@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = ucwords($value);
+    }
+
+    public function getPriceAttribute($value)
+    {
+        return "Rs. " . $value;
+    }
 }
