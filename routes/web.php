@@ -3,6 +3,7 @@
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\UploadController;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -69,3 +70,6 @@ Route::get('destroy-session', function () {
     session()->forget('user-id');
     return redirect('/get-all-session');
 });
+
+Route::get('/upload', [UploadController::class, 'uploadpage'])->name('upload-page');
+Route::post('/upload', [UploadController::class, 'upload'])->name('upload');

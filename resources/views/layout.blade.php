@@ -14,6 +14,7 @@
             <li><a href="/directives">Directives</a></li>
             <li><a href="/register">Register</a></li>
             <li><a href="{{route('products.view')}}">products</a></li>
+            <li><a href="{{route('upload-page')}}">File Upload</a></li>
         </ul>
     </nav>
     {{-- @if (session()->has('user-name'))
