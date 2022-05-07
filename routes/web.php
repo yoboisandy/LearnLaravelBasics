@@ -73,8 +73,15 @@ Route::get('destroy-session', function () {
     return redirect('/get-all-session');
 });
 
-Route::get('/upload', [UploadController::class, 'uploadpage'])->name('upload-page')->middleware('guard');
-Route::post('/upload', [UploadController::class, 'upload'])->name('upload');
+Route::get('/login', function () {
+    session()->put('user_id', 1);
+    echo "logged in";
+});
+
+Route::middleware('guard')->group(function () {
+    Route::get('/upload', [UploadController::class, 'uploadpage'])->name('upload-page');
+    Route::post('/upload', [UploadController::class, 'upload'])->name('upload');
+});
 
 Route::get('/data', [IndexController::class, 'index']);
 Route::get('/group', [IndexController::class, 'group']);
