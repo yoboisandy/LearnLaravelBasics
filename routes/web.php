@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\UploadController;
@@ -74,3 +75,6 @@ Route::get('destroy-session', function () {
 
 Route::get('/upload', [UploadController::class, 'uploadpage'])->name('upload-page');
 Route::post('/upload', [UploadController::class, 'upload'])->name('upload');
+
+Route::get('/data', [IndexController::class, 'index']);
+Route::get('/group', [IndexController::class, 'group']);
