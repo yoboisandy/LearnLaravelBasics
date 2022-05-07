@@ -28,10 +28,15 @@ class ProductController extends Controller
         return redirect()->route('products.view');
     }
 
-    public function view()
+    public function view(Request $request)
     {
-        $products = Product::all();
-        return view('products.view', compact('products'));
+        $search = $request->search ?? "";
+        if ($search != "") {
+            $products = Product::where('name', "LIKE", "%$search%")->get();
+        } else {
+            $products = Product::all();
+        }
+        return view('products.view', compact('products', 'search'));
     }
 
     public function viewTrash()
