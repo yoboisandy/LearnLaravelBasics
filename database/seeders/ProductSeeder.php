@@ -17,10 +17,12 @@ class ProductSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $product = new Product();
-        $product->name = $faker->name;
-        $product->description = $faker->text(100);;
-        $product->price = $faker->randomNumber(3, true);
-        $product->save();
+        for ($i = 0; $i < 100; $i++) {
+            $product = new Product();
+            $product->name = $faker->name;
+            $product->description = $faker->text(100);;
+            $product->price = $faker->randomNumber(3, true);
+            $product->save();
+        }
     }
 }
