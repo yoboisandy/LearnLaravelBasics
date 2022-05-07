@@ -15,7 +15,7 @@
     </a>
 </div>
 <br>
-    <table border="2">
+    <table class="table table-bordered" border="2">
         <tr>
             <th>id</th>
             <th>Name</th>
@@ -38,4 +38,5 @@
         </tr>
         @endforeach
     </table>
+    {{$products->links('pagination::bootstrap-5')}}
 @endsection

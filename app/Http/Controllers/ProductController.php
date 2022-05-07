@@ -32,9 +32,9 @@ class ProductController extends Controller
     {
         $search = $request->search ?? "";
         if ($search != "") {
-            $products = Product::where('name', "LIKE", "%$search%")->get();
+            $products = Product::where('name', "LIKE", "%$search%")->paginate(15);
         } else {
-            $products = Product::all();
+            $products = Product::paginate(15);
         }
         return view('products.view', compact('products', 'search'));
     }
