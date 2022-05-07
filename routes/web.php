@@ -84,4 +84,4 @@ Route::middleware('guard')->group(function () {
 });
 
 Route::get('/data', [IndexController::class, 'index']);
-Route::get('/group', [IndexController::class, 'group']);
+Route::get('/group/{group}', [IndexController::class, 'group']);
