@@ -19,9 +19,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+Route::get('/welcome/{lang?}', function ($lang = null) {
+    App::setlocale($lang);
+    return view('welcome');
+});
 
 // Route::get('/about/{name}', function ($name) {
 //     return view('about', compact('name'));
