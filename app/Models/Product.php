@@ -11,6 +11,8 @@ class Product extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $fillable = ['name', 'price', 'description'];
+
     public function setNameAttribute($value)
     {
         $this->attributes['name'] = ucwords($value);
